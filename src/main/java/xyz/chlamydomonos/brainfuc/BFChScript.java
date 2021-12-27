@@ -11,7 +11,7 @@ import java.util.Stack;
  * 基础BFCh脚本只能由合法的控制字符'+'，'-'，'['，']'，'<'，'>'，','，'.'，'/'，'\\'组成，
  * 不能含有其他字符。
  */
-public class BFChScript
+public class BFChScript implements IBFChScript
 {
     private final ArrayList<Character> data;
     private final ArrayList<Integer> bracketInfo;
@@ -63,21 +63,14 @@ public class BFChScript
         }
     }
 
-    /**
-     * 获取字符数组形式的脚本
-     */
-    public ArrayList<Character> getData()
+    @Override
+    public @NotNull ArrayList<Character> getData()
     {
         return data;
     }
 
-    /**
-     * 获取脚本的括号匹配信息
-     * <br>
-     * 返回的括号匹配信息中，每一位的值若为负数，则代表该位不是括号，
-     * 否则，代表与该位匹配的括号所在位置（序号从0开始）。
-     */
-    public ArrayList<Integer> getBracketInfo()
+    @Override
+    public @NotNull ArrayList<Integer> getBracketInfo()
     {
         return bracketInfo;
     }
