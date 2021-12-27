@@ -48,7 +48,7 @@ public class BFChEngine
     private int handleMinus(int currentIndex)
     {
         Object temp = memory.get(currentMemoryIndex);
-        if(!(temp instanceof Integer) || (Integer)temp == 1)
+        if(!(temp instanceof Integer) || (Integer)temp <= 1)
             memory.set(currentMemoryIndex, null);
         else
             memory.set(currentMemoryIndex, (Integer)temp - 1);
