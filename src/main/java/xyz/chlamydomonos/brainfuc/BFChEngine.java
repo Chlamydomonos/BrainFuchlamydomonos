@@ -27,6 +27,8 @@ public class BFChEngine
             Object next = memory.get(currentMemoryIndex + 1);
             if(next instanceof Integer)
             {
+                while (memory.size() < currentMemoryIndex + 3)
+                    memory.add(null);
                 Object obj = memory.get(currentMemoryIndex + 2);
                 ArrayList<Object> params = new ArrayList<>();
                 for(int i = 0; i < (Integer) next - 1; i++)
