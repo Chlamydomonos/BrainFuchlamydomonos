@@ -3,6 +3,7 @@ package xyz.chlamydomonos.brainfuc;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -73,5 +74,20 @@ public class BFChScript implements IBFChScript
     public @NotNull ArrayList<Integer> getBracketInfo()
     {
         return bracketInfo;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof BFChScript)) return false;
+        BFChScript that = (BFChScript) o;
+        return Objects.equals(data, that.data);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(data);
     }
 }
